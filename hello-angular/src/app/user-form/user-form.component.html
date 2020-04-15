@@ -1,0 +1,22 @@
+<form>
+  <p>
+    Prénom :
+    <input class="field"
+      placeholder="Veuillez saisir votre prénom"
+      value="{{ user.firstName }}"
+    />
+  </p>
+  <p>Nom : <input [className]="'field'.toUpperCase()" /></p>
+  <p>
+    Admin :
+    <input class="field" [class.isAdmin]="user.isAdmin" id="check" type="checkbox" [checked]="user.isAdmin" />
+    <!--
+        const inputEl = document.getElementId('check');
+        inputEl.checked = user.isAdmin;
+        inputEl.className = 'field checkbox';
+    -->
+  </p>
+  <p>
+    <button>Send</button>
+  </p>
+</form>

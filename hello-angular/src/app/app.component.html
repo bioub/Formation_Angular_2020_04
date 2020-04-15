@@ -1,6 +1,18 @@
 <b>Hello</b>
 <app-hello></app-hello>
 <app-hello name="Raphaelle"></app-hello>
+<app-hello [name]="'Raphaelle' | uppercase"></app-hello>
 
 <b>Counter</b>
-<app-counter></app-counter>
+<app-counter [count]="compteur" (countChange)="compteur = $event"></app-counter>
+
+<p>La valeur du compteur est : {{compteur}}</p>
+
+<b>User Form</b>
+<app-user-form></app-user-form>
+
+<b>Clock</b>
+<!-- <app-clock></app-clock> -->
+<!-- <app-clock format="HH:mm"></app-clock> -->
+<app-clock [delay]="2000"></app-clock>
+
