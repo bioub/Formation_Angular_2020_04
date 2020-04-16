@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { UsersComponent } from './users/users.component';
+import { UserAddComponent } from './user-add/user-add.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 // Penser à importer UsersModule dans AppModule
 
@@ -12,10 +15,25 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Faire des liens vers ces pages (app.component.html)
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'users',
+    component: UsersComponent,
+    children: [
+      {
+        path: 'add',
+        component: UserAddComponent,
+      },
+      {
+        path: ':id',
+        component: UserDetailsComponent,
+      },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UsersRoutingModule { }
+export class UsersRoutingModule {}

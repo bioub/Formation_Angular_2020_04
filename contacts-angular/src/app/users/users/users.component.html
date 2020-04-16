@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-3">
+    <a routerLink="add" class="btn btn-block btn-primary mb-3">Add</a>
+    <div class="list-group">
+      <a [routerLink]="123" routerLinkActive="active" class="list-group-item list-group-item-action">
+        Cras justo odio
+      </a>
+      <a [routerLink]="234" routerLinkActive="active" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+      <a [routerLink]="345" routerLinkActive="active" class="list-group-item list-group-item-action">Morbi leo risus</a>
+      <a [routerLink]="456" routerLinkActive="active" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>    </div>
+  </div>
+  <div class="col-md">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,13 +1,5 @@
-<nav>
-  <h1>AddressBook</h1>
-  <a
-    routerLink="/"
-    routerLinkActive="current"
-    [routerLinkActiveOptions]="{ exact: true }"
-  >Home</a>
-  <a routerLink="/presentation" routerLinkActive="current">Présentation</a>
-  <!-- <a [routerLink]="'/'">Home</a>
-  <a [routerLink]="['presentation']">Présentation</a> -->
-</nav>
+<app-top-bar></app-top-bar>
 
-<router-outlet></router-outlet>
+<div class="container-fluid mt-3">
+  <router-outlet></router-outlet>
+</div>
