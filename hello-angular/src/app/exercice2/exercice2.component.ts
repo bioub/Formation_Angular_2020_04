@@ -16,4 +16,7 @@ export class Exercice2Component implements OnInit {
   ngOnInit(): void {
   }
 
+  add() {
+    this.liste.push(this.saisie);
+  }
 }

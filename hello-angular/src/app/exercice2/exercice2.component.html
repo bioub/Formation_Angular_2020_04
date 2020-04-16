@@ -10,12 +10,12 @@
 
 <div>
   Ajouter à votre liste de course :
-  <input />
-  <button>Ajouter</button>
+  <input [(ngModel)]="saisie" />
+  <button (click)="add()">Ajouter</button>
 </div>
 
 <ul>
-  <li>A</li>
-  <li>B</li>
-  <li>C</li>
+  <li *ngFor="let elt of liste">
+    {{elt}}
+  </li>
 </ul>
