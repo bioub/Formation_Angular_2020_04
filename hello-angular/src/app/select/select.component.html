@@ -1,0 +1,13 @@
+<div class="selected" (click)="opened = !opened">
+  {{ selected }}
+</div>
+<div class="items" *ngIf="opened">
+  <div
+    class="item"
+    *ngFor="let item of items"
+    [class.active]="item === selected"
+    (click)="selectedChange.emit(item)"
+  >
+    {{ item }}
+  </div>
+</div>

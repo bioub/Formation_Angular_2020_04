@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.selected {
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 5px;
+  width: 150px;
+}
+
+.items {
+  cursor: pointer;
+  border: 1px solid black;
+  width: 150px;
+}
+
+.item {
+  padding: 5px;
+}
+
+.item:hover {
+  background-color: aliceblue;
+}
+
+.item.active {
+  background-color: lightblue;
+}

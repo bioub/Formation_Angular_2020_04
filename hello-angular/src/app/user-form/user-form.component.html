@@ -1,17 +1,39 @@
 <form>
   <p>
     Prénom :
-    <input class="field"
+    <!-- <input class="field"
       placeholder="Veuillez saisir votre prénom"
-      value="{{ user.firstName }}"
+      [value]="user.firstName"
+      (input)="user.firstName = $event.target.value"
+    /> -->
+    <!-- <input class="field"
+      placeholder="Veuillez saisir votre prénom"
+      [ngModel]="user.firstName"
+      (ngModelChange)="user.firstName = $event"
+    /> -->
+    <input
+      class="field"
+      placeholder="Veuillez saisir votre prénom"
+      name="firstName"
+      [(ngModel)]="user.firstName"
     />
+    <!--
+      [()] Banana in box
+      Ex:
+      [(count)]="compteur"
+    -->
   </p>
-  <p>Nom : <input [className]="'field'.toUpperCase()" /></p>
+  <p>Nom : <input name="lastName" [(ngModel)]="user.lastName" /></p>
   <p>
     Admin :
-    <input class="field" [class.isAdmin]="user.isAdmin" id="check" type="checkbox" [checked]="user.isAdmin" />
+    <input name="isAdmin" type="checkbox" [(ngModel)]="user.isAdmin" />
+    <!-- <input type="checkbox" checked /> -->
+    <!-- <input type="checkbox" /> -->
+
+    <!-- <input class="field" [class.isAdmin]="user.isAdmin" id="check" type="checkbox" [checked]="user.isAdmin" /> -->
     <!--
-        const inputEl = document.getElementId('check');
+        // MDN -> HTMLInputElement
+        const inputEl = document.getElementById('check');
         inputEl.checked = user.isAdmin;
         inputEl.className = 'field checkbox';
     -->
@@ -20,3 +42,4 @@
     <button>Send</button>
   </p>
 </form>
+<p>User : {{ user | json }}</p>
