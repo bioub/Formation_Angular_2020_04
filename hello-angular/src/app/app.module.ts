@@ -8,6 +8,8 @@ import { CounterComponent } from './counter/counter.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { ClockComponent } from './clock/clock.component';
 import { SelectComponent } from './select/select.component';
+import { Exercice1Component } from './exercice1/exercice1.component';
+import { Exercice2Component } from './exercice2/exercice2.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SelectComponent } from './select/select.component';
     CounterComponent,
     UserFormComponent,
     ClockComponent,
-    SelectComponent
+    SelectComponent,
+    Exercice1Component,
+    Exercice2Component
   ],
   imports: [
     BrowserModule,
