@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "hello-angular"
+		},
+		{
+			"path": "todolist-angular"
+		},
+		{
+			"path": "contacts-angular"
+		}
+	],
+	"settings": {}
+}
