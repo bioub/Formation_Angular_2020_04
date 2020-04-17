@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
 import { PresentationComponent } from './core/presentation/presentation.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,11 @@ const routes: Routes = [
   {
     path: 'presentation', // sans le slash de début
     component: PresentationComponent,
+  },
+  {
+    path: '**',
+    // redirectTo: '/',
+    component: NotFoundComponent,
   },
 ];
 

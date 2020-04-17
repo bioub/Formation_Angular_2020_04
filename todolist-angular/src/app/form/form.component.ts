@@ -8,6 +8,7 @@ import { Todo } from '../todo.model';
 })
 export class FormComponent implements OnInit {
 
+  // Utility Type : Partial / ReadOnly...
   // newTodo: Partial<Todo> = {
   //   title: '',
   //   completed: false,

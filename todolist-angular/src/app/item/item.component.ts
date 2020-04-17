@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { Todo } from '../todo.model';
 
 @Component({
@@ -6,7 +6,7 @@ import { Todo } from '../todo.model';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent implements OnInit, DoCheck {
 
   @Input()
   item: Todo;
@@ -14,6 +14,10 @@ export class ItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngDoCheck(): void {
+    console.log('check item');
   }
 
 }

@@ -1,2 +1,13 @@
-<todo-form (add)="todos.push($event)"></todo-form>
+<todo-form (add)="addTodo($event)"></todo-form>
 <todo-list [items]="todos"></todo-list>
+
+/* Detection de changement
+- juste après exécuter le code de () d'un template
+- sur des callbacks asynchrones (Zone.js): ex setInterval
+- manuellement via le service ChangeDetectorRef
+   app -> todos: ['A', 'B', 'C']
+  /  \
+form  list
+      /   |    \
+    item  item  item
+*/

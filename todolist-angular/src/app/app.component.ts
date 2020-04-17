@@ -16,4 +16,9 @@ export class AppComponent {
     title: 'Lait',
     completed: true,
   }];
+  addTodo(todo) {
+    // this.todos.push(todo); // changement muable
+
+    this.todos = [...this.todos, todo]; // changement immuable
+  }
 }

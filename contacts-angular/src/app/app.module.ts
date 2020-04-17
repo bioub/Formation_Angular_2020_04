@@ -8,6 +8,7 @@ import { PresentationComponent } from './core/presentation/presentation.componen
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { UsersModule } from './users/users.module';
 import { TopBarComponent } from './core/top-bar/top-bar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,14 @@ import { TopBarComponent } from './core/top-bar/top-bar.component';
     TopBarComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
-    UsersModule
+    UsersModule,
+    AppRoutingModule, // à la fin à cause -> **
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
