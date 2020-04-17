@@ -1,5 +1,7 @@
-<b>Name</b>
-<p>{{ user.name }}</p>
+<ng-container *ngIf="user$ | async as user">
+  <b>Name</b>
+  <p>{{ user.name }}</p>
 
-<b>Email</b>
-<p>{{ user.email }}</p>
+  <b>Email</b>
+  <p>{{ user.email }}</p>
+</ng-container>

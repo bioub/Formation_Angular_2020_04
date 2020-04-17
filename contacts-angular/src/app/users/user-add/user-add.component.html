@@ -1,11 +1,31 @@
-<form>
+<form #userForm="ngForm" (submit)="userForm.valid && submit()">
   <div class="form-group">
-    <label>Name</label>
-    <input type="text" name="name" class="form-control">
+    <label class="toto">Name</label>
+    <input
+      type="text"
+      name="name"
+      class="form-control"
+      [(ngModel)]="user.name"
+      #inputName="ngModel"
+      required
+    />
+    <p *ngIf="inputName.invalid && (inputName.touched || userForm.submitted)">
+      Le nom est obligatoire
+    </p>
   </div>
   <div class="form-group">
     <label>Email</label>
-    <input type="email" name="email" class="form-control">
+    <input
+      type="email"
+      name="email"
+      class="form-control"
+      [(ngModel)]="user.email"
+      #inputEmail="ngModel"
+      email
+    />
+    <p *ngIf="inputEmail.invalid && (inputEmail.touched || userForm.submitted)">
+      L'email n'est pas valide
+    </p>
   </div>
 
   <button class="btn btn-primary">Submit</button>

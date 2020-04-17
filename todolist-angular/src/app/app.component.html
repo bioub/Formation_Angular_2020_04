@@ -1,5 +1,5 @@
 <todo-form (add)="addTodo($event)"></todo-form>
-<todo-list [items]="todos"></todo-list>
+<todo-list [items]="todos$ | async"></todo-list>
 
 /* Detection de changement
 - juste après exécuter le code de () d'un template

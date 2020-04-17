@@ -3,6 +3,7 @@ import { UserService } from '../user.service';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../user.model';
 import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-details',
@@ -10,10 +11,7 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./user-details.component.scss'],
 })
 export class UserDetailsComponent implements OnInit {
-  user: User = {
-    name: '',
-    email: '',
-  };
+  user$: Observable<User>;
 
   // private userService: UserService;
   // constructor(userService: UserService) {
@@ -40,11 +38,8 @@ export class UserDetailsComponent implements OnInit {
     // client : -----(click:1)-----(click:3)-----(click:2)--------------
     // prmMp  : -----({id: 1})-----({id: 3})-----({id: 2})--------------
     // getById: ----------------({id: 1})-------------({id: 2})---------
-    this.activatedRoute.paramMap.pipe(
-        switchMap((paramMap) => this.userService.getById(paramMap.get('id'))),
-      )
-      .subscribe((user) => {
-        this.user = user;
-      });
+    this.user$ = this.activatedRoute.paramMap.pipe(
+      switchMap((paramMap) => this.userService.getById(paramMap.get('id')))
+    );
   }
 }

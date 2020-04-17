@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Todo } from './todo.model';
+import { TodoService } from './todo.service';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'todo-root',
@@ -7,6 +9,9 @@ import { Todo } from './todo.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  private subscription: Subscription;
+
   todos: Todo[] = [{
     id: 123,
     title: 'Pain',
@@ -16,12 +21,30 @@ export class AppComponent {
     title: 'Lait',
     completed: true,
   }];
+
+  todos$: Observable<Todo[]>;
+
+  constructor(private todoService: TodoService) {}
+
   addTodo(todo) {
     // this.todos.push(todo); // changement muable
 
     this.todos = [...this.todos, todo]; // changement immuable
   }
 
+  ngOnInit() {
+    this.todos$ = this.todoService.getAll();
+  }
+
+  // ngOnInit() {
+  //   this.subscription = this.todoService.getAll().subscribe((todos) => {
+  //     this.todos = todos;
+  //   })
+  // }
+
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
   /*
   Exercice :
   - Générer un service TodoService
