@@ -21,4 +21,15 @@ export class AppComponent {
 
     this.todos = [...this.todos, todo]; // changement immuable
   }
+
+  /*
+  Exercice :
+  - Générer un service TodoService
+  - D'y injecter HttpClient (pensez à HttpClientModule)
+  - D'y ajouter une méthode getAll qui requete via la méthode GET
+  https://jsonplaceholder.typicode.com/todos
+  - D'injecter le service TodoService ici
+  - Au ngOnInit appeler la méthode getAll du service
+  et de stocker le résultats dans this.todos
+  */
 }
